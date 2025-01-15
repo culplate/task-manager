@@ -5,5 +5,9 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  return <div>{children}</div>;
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-t from-violet-100 to-transparent">
+      {children}
+    </div>
+  );
 }
