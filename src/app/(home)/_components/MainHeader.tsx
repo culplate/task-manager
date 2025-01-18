@@ -1,21 +1,19 @@
 import Link from 'next/link';
+
 import NavLink from './NavLink';
 import MobileMenu from './MobileMenu';
+import LogoLink from '@/app/shared/components/LogoLink';
 
 export default function MainHeader() {
   return (
-    <header className="flex justify-between items-center px-5 md:px-10 transition-shadow duration-300 hover:shadow-md mb-1">
-      <Link href="/" className="py-4">
-        <svg className="w-9 h-9">
-          <use href={`/icons.svg#icon-logo`}></use>
-        </svg>
-      </Link>
+    <header className="flex justify-between items-center px-5 md:px-10 transition-shadow duration-300 shadow-md mb-1">
+      <LogoLink />
 
       {/* Desktop navbar */}
       <nav className="hidden md:flex items-center">
         <div className="flex gap-4 mr-40 items-center">
           <NavLink href="/about">About</NavLink>
-          {/* TODO Make dashboard link conditional and accessible after auth*/}
+          {/* TODO Make dashboard link accessible after auth only */}
           <NavLink href="/dashboard">Dashboard</NavLink>
           {/* TODO Create demo of dashboard accessible without auth */}
           <NavLink href="/demo">Demo</NavLink>
@@ -34,7 +32,6 @@ export default function MainHeader() {
         </div>
       </nav>
 
-      {/* Mobile navbar */}
       <MobileMenu />
     </header>
   );
