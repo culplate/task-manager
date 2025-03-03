@@ -1,7 +1,6 @@
 'use client';
 
 import LogoLink from '@/app/shared/components/LogoLink';
-
 import { useSidebar } from '@/app/shared/context/SidebarProvider';
 
 export default function Sidebar() {
